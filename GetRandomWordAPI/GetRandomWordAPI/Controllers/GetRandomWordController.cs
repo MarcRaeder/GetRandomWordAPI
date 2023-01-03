@@ -10,27 +10,25 @@ namespace GetRandomWordAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GetRandomWordController : ControllerBase
+    public class WordController : ControllerBase
     {
-        private GetRandomWordService GetRandomWordService;
+        private WordService WordService;
 
-        public GetRandomWordController(GetRandomWordService getRandomWordService)
+        public WordController(WordService wordService)
         {
-            this.GetRandomWordService = getRandomWordService;
+            this.WordService = wordService;
         }
-        // GET: api/GetRandomWord
+
         [HttpGet("/all")]
         public List<string> GetAllWords()
         {
-            return GetRandomWordService.GetAllWords();
+            return WordService.GetAllWords();
         }
 
-        // GET: api/GetRandomWord/5
         [HttpGet("/word")]
-        public IEnumerable<string> GetWord(int number)
+        public IEnumerable<string> GetWord(int amount)
         {
-            return GetRandomWordService.GetWord(number);
+            return WordService.GetWord(amount);
         }
-        
     }
 }

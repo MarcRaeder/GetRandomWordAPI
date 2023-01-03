@@ -3,11 +3,11 @@ using GetRandomWordAPI.Service;
 
 namespace GetRandomWordAPI.Repository;
 
-public class GetRandomWordRepository
+public class WordRepository
 {
     private DataService DataService;
 
-    public GetRandomWordRepository(DataService dataService)
+    public WordRepository(DataService dataService)
     {
         this.DataService = dataService;
     }
@@ -17,12 +17,12 @@ public class GetRandomWordRepository
         return DataService.wordlist;
     }
     
-    public IEnumerable<string> GetWord(int number)
+    public IEnumerable<string> GetWord(int amount)
     {
-        if (number == 0)
+        if (amount == 0)
         {
-            number = 1;
+            amount = 1;
         }
-        return DataService.wordlist.AsEnumerable().OrderBy(n => Guid.NewGuid()).Take(number);
+        return DataService.wordlist.AsEnumerable().OrderBy(n => Guid.NewGuid()).Take(amount);
     }
 }

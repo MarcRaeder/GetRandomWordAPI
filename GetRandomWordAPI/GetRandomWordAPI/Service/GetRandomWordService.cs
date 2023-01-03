@@ -2,21 +2,21 @@ using GetRandomWordAPI.Repository;
 
 namespace GetRandomWordAPI.Service;
 
-public class GetRandomWordService
+public class WordService
 {
-    private GetRandomWordRepository GetRandomWordRepository;
+    private WordRepository WordRepository;
 
-    public GetRandomWordService(GetRandomWordRepository getRandomWordRepository)
+    public WordService(WordRepository wordRepository)
     {
-        this.GetRandomWordRepository = getRandomWordRepository;
+        this.WordRepository = wordRepository;
     }
     public List<string> GetAllWords()
     {
-        return GetRandomWordRepository.GetAllWords();
+        return WordRepository.GetAllWords();
     }
     
-    public IEnumerable<string> GetWord(int number)
+    public IEnumerable<string> GetWord(int amount)
     {
-        return GetRandomWordRepository.GetWord(number);
+        return WordRepository.GetWord(amount);
     }
 }
