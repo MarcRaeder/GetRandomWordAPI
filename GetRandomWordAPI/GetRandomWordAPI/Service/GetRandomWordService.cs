@@ -15,8 +15,8 @@ public class WordService
         return WordRepository.GetAllWords();
     }
     
-    public IEnumerable<string> GetWord(int amount)
+    public IEnumerable<string> GetWords(int amount)
     {
-        return WordRepository.GetWord(amount);
+        return WordRepository.GetWords(amount);
     }
 }

@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using GetRandomWordAPI.Service;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GetRandomWordAPI.Controllers
@@ -26,9 +21,9 @@ namespace GetRandomWordAPI.Controllers
         }
 
         [HttpGet("/word")]
-        public IEnumerable<string> GetWord(int amount)
+        public IEnumerable<string> GetWords(int amount)
         {
-            return WordService.GetWord(amount);
+            return WordService.GetWords(amount);
         }
     }
 }

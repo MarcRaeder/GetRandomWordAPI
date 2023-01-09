@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using GetRandomWordAPI.Service;
 
 namespace GetRandomWordAPI.Repository;
@@ -17,7 +16,7 @@ public class WordRepository
         return DataService.wordlist;
     }
     
-    public IEnumerable<string> GetWord(int amount)
+    public IEnumerable<string> GetWords(int amount)
     {
         if (amount == 0)
         {
