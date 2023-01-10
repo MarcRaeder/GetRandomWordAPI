@@ -10,6 +10,7 @@ public class WordService
     {
         this.WordRepository = wordRepository;
     }
+    
     public List<string> GetAllWords()
     {
         return WordRepository.GetAllWords();
