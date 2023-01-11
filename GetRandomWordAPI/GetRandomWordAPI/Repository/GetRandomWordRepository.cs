@@ -16,7 +16,7 @@ public class WordRepository
         return DataService.wordlist;
     }
     
-    public IEnumerable<string> GetWords(int amount)
+    public IEnumerable<string> GetWord(int amount)
     {
         if (amount == 0)
         {

@@ -21,9 +21,9 @@ namespace GetRandomWordAPI.Controllers
         }
 
         [HttpGet("/word")]
-        public IEnumerable<string> GetWords(int amount)
+        public IEnumerable<string> GetWord(int amount)
         {
-            return WordService.GetWords(amount);
+            return WordService.GetWord(amount);
         }
     }
 }
